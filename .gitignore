@@ -18,7 +18,6 @@
 .env.test.local
 .env.production.local
 .env
-/assets
 
 # logs
 npm-debug.log*
