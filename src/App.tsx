@@ -3,8 +3,13 @@ import { Route, Routes, Link } from 'react-router-dom';
 import { Home } from './pages/Home/index';
 import { Private } from './pages/Private/index';
 import { RequireAuth } from './contexts/Auth/RequireAuth';
+import { useContext } from 'react';
+import { AuthContext } from './contexts/Auth/AuthContext';
 
 function App() {
+
+  const auth = useContext(AuthContext);
+
   return (
     <div className="App">
       <header>
@@ -12,6 +17,7 @@ function App() {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/private">Página Privada</Link>
+          {auth.user && <a href="javascript">Sair</a>}
         </nav>
       </header>
       <hr />
